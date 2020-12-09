@@ -3,11 +3,11 @@
 {% block content %}
 <div class="container">
     <br><br><h3 class="welcome-message text-center "> Welcome to <span style="color: cadetblue" >Quizzz</span> Application....!!!</h3>
-    <div class="col-md-16 mt-5 ml-5">
-        <div class="row justify-content-center">
-            {% for course in courses %}
+    <div class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3">
+        {% for course in courses %}
+            <div class="col mb-4">
                 <br>
-                <div class="card w-25 ml-3">
+                <div class="card ">
                     <div class="card-body ">
                         <h2 class="card-title">{{course.course_name}}</h2>
                         <p class="card-text">{{course.description|slice:":50"|safe}}</p>
@@ -15,12 +15,9 @@
                            role="button">Start Quiz </a>
                     </div>
                 </div>
-            {% endfor %}
             </div>
-        </div>
+        {% endfor %}
     </div>
-<br><br>
 </div>
-
 
 {% endblock %}
