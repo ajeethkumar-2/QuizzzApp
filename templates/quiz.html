@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-75">
+    {% for q in questions %}
+            <br><h4 class="text-center"><span style="color: cadetblue" >Quizzz</span> for {{q.course}}</h4><br>
+            <h2> Question - {{q.question}}</h2><br>
+            <form>
+                <div class="radio">
+                    <label><input type="radio" id="option1"  class="rb mr-3" name="name" value="{{q.option_1}}">{{q.option_1}}</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="option2"  class="rb mr-3" name="name" value="{{q.option_2}}">{{q.option_2}}</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="option3"  class="rb mr-3" name="name" value="{{q.option_3}}">{{q.option_3}}</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" id="option4"  class="rb mr-3" name="name" value="{{q.option_4}}">{{q.option_4}}</label>
+                </div>
+            </form>
+            <div>
+               <b><label id="correct_ans" class="rb mb-2" style="display: none; color: green;">Correct Answer is : {{q.answer}}</label></b>
+            </div>
+    {% endfor %}
+             <div class="form-group">
+                 <div>
+                   <b><label id="user_answer"></label></b><br>
+                 </div>
+                 <div>
+                     <br><input  class="btn btn-primary" type="submit" value="Submit" id="save_ans" onclick="getAnswer();">
+                 </div>
+
+                 <div class="paginator mt-2">
+                        {% if questions.has_next %}
+                            <a href="?page={{ questions.next_page_number }}"><button class="btn btn-primary float-right"
+                                                                                    id="submitAnswer">Next</button> </a>
+                        {% else %}
+                         <a href="{% url 'result' %}"><button class="btn btn-primary float-right"
+                                                                                    id="submitQuiz">End Quiz</button> </a>
+
+                        {% endif %}
+                </div>
+             </div>
+</div>
+{% endblock %}

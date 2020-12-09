@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center"> Well Done, Thank You Participating.</h2><br>
+
+        <div class="text-center">
+           <h3 id="emailHelp" class="form-text text-muted">To Check other Topics
+                <a href="{% url 'home' %}">Click Here.</a></h3>
+        </div>
+    </div>
+{% endblock %}
