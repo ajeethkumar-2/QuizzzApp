@@ -12,14 +12,8 @@ def home(request):
 def quiz(request, id):
     ques = Question.objects.filter(course=id)
     pagination = Paginator(ques, 1)
-    try :
-        page = int(request.GET.get('page', '1'))
-    except :
-        page = 1
-    try :
-        questions = pagination.page(page)
-    except(EmptyPage, InvalidPage):
-        questions = pagination.page(pagination.num_pages)
+    page_number = request.GET.get('page')
+    questions = Paginator.get_page(pagination, page_number)
     context = {
         'Course': ques,
         'questions': questions
