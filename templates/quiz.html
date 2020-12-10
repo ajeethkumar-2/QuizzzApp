@@ -27,11 +27,11 @@
      <div>
        <b><label id="user_answer"></label></b><br>
      </div>
-     <div  class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+     <div  class="row row-cols-1 row-cols-sm-2 row-cols-sm-3">
          <div class="col mb-4">
              <br>
              <input  class="btn btn-primary" type="submit" value="Check Answer" id="save_ans" onclick="getAnswer();">
-
+             <br>
             {% if questions.has_previous %}
                 <a href="?page={{ questions.previous_page_number }}"><button class="btn btn-primary ml-4">
                                                                                            Previous</button></a>
