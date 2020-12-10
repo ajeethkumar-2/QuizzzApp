@@ -27,20 +27,19 @@
      <div>
        <b><label id="user_answer"></label></b><br>
      </div>
-     <div  class="row row-cols-1 row-cols-sm-2 row-cols-sm-3">
+     <div  class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
          <div class="col mb-4">
              <br>
-             <input  class="btn btn-primary" type="submit" value="Check" id="save_ans" onclick="getAnswer();">
-             <br>
+             <input  class="btn btn-primary btn-sm" type="submit" value="Check" id="save_ans" onclick="getAnswer();">
             {% if questions.has_previous %}
-                <a href="?page={{ questions.previous_page_number }}"><button class="btn btn-primary ml-4">
-                                                                                           Prev</button></a>
+                <a href="?page={{ questions.previous_page_number }}"><button class="btn btn-primary btn-sm ml-1">
+                                                                                           Previous</button></a>
             {% endif %}
             {% if questions.has_next %}
-                <a href="?page={{ questions.next_page_number }}"><button class="btn btn-primary ml-4" id="submitAnswer">Next</button> </a>
+                <a href="?page={{ questions.next_page_number }}"><button class="btn btn-primary btn-sm ml-1" id="submitAnswer">Next</button> </a>
 
             {% else %}
-             <a href="{% url 'result' %}"><button class="btn btn-primary ml-4"
+             <a href="{% url 'result' %}"><button class="btn btn-primary btn-sm ml-1"
                                                                         id="submitQuiz">End Quiz</button> </a>
 
             {% endif %}
