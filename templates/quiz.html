@@ -33,7 +33,7 @@
              <input  class="btn btn-primary btn-sm" type="submit" value="Check Ans" id="save_ans" onclick="getAnswer();">
             {% if questions.has_previous %}
                 <a href="?page={{ questions.previous_page_number }}"><button class="btn btn-primary btn-sm ml-1">
-                                                                                           Previous</button></a>
+                                                                                           Prev</button></a>
             {% endif %}
             {% if questions.has_next %}
                 <a href="?page={{ questions.next_page_number }}"><button class="btn btn-primary btn-sm ml-1" id="submitAnswer">Next</button> </a>
